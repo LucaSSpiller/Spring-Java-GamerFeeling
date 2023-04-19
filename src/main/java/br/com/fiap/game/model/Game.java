@@ -20,7 +20,7 @@ public class Game {
     private Genero genero;
     @Embedded
     private Requisitos requisitos;
-    private boolean visivel;
+    private boolean delLogica;
 
     public Game(){}
 
@@ -33,11 +33,11 @@ public class Game {
         this.dataLancamento = dados.dataLancamento();
         this.genero = dados.genero();
         this.requisitos = new Requisitos(dados.requisitos());
-        this.visivel = true;
+        this.delLogica = true;
     }
 
     public void deletarGame(){
-        this.visivel = false;
+        this.delLogica = false;
     }
 
     public void atualizarGame(AtualizarGame dados) {
@@ -151,11 +151,11 @@ public class Game {
     }
 
     public boolean isVisivel() {
-        return visivel;
+        return delLogica;
     }
 
-    public Game setVisivel(boolean visivel) {
-        this.visivel = visivel;
+    public Game setDelLogica(boolean delLogica) {
+        this.delLogica = delLogica;
         return this;
     }
 }
