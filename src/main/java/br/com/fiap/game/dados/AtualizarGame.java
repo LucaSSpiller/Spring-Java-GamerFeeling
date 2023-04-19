@@ -1,19 +1,20 @@
-package br.com.fiap.game.jogo.dados;
+package br.com.fiap.game.dados;
 
-import br.com.fiap.game.jogo.model.Genero;
+import br.com.fiap.game.model.Genero;
 import jakarta.validation.constraints.*;
 
 import java.time.Year;
 
-public record AtualizarJogo(
+public record AtualizarGame(
+        Long id,
         String titulo,
         String desenvolvedora,
         String distribuidora,
         String idiomas,
-        @Min(1) @Max(4)
-        Integer numJogadores,
-        @PastOrPresent
-        Year dataLancamento,
+
+        int numJogadores,
+
+        int dataLancamento,
         Genero genero,
         DadosRequisitos requisitos
 ) {

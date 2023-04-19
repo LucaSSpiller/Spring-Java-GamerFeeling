@@ -1,60 +1,65 @@
-package br.com.fiap.game.jogo.model;
+package br.com.fiap.game.model;
 
-import br.com.fiap.game.jogo.dados.DadosRequisitos;
+import br.com.fiap.game.dados.DadosRequisitos;
 import jakarta.persistence.Embeddable;
 
 @Embeddable
 public class Requisitos {
 
-    private String sistOperacional;
+    private String sistema;
     private String processador;
     private String memoria;
-    private String placaVideo;
+
+    private String placa;
     private int armazenamento;
 
     public Requisitos() {
     }
 
     public Requisitos(DadosRequisitos dados) {
-        this.sistOperacional = dados.sistOperacional();
+        this.sistema = dados.sistema();
         this.processador = dados.processador();
         this.memoria = dados. memoria();
-        this.placaVideo = dados.placaVideo();
+        this.placa = dados.placa();
         this.armazenamento = dados.armazenamento();
     }
 
-    public void atualizarJogo(DadosRequisitos dados) {
-        if (dados.armazenamento() != null) {
-            this.armazenamento = dados.armazenamento();
-        }
-        if (dados.memoria() != null) {
-            this.memoria = dados.memoria();
-        }
-        if (dados.sistOperacional() != null) {
-            this.sistOperacional = dados.sistOperacional();
-        }
-        if (dados.placaVideo() != null) {
-            this.placaVideo = dados.placaVideo();
+    public void atualizarGame(DadosRequisitos dados) {
+        if (dados.sistema() != null) {
+            this.sistema = dados.sistema();
         }
         if (dados.processador() != null) {
             this.processador = dados.processador();
         }
+        if (dados.memoria() != null) {
+            this.memoria = dados.memoria();
+        }
+        if (dados.placa() != null) {
+            this.placa = dados.placa();
+        }
+        if (dados.armazenamento() != 0) {
+            this.armazenamento = dados.armazenamento();
+        }
+
+
+
+
     }
 
-    public Requisitos(String sistOperacional, String processador, String memoria, String placaVideo, int armazenamento) {
-        this.sistOperacional = sistOperacional;
+    public Requisitos(String sistema, String processador, String memoria, String placa, int armazenamento) {
+        this.sistema = sistema;
         this.processador = processador;
         this.memoria = memoria;
-        this.placaVideo = placaVideo;
+        this.placa = placa;
         this.armazenamento = armazenamento;
     }
 
-    public String getSistOperacional() {
-        return sistOperacional;
+    public String getSistema() {
+        return sistema;
     }
 
-    public Requisitos setSistOperacional(String sistOperacional) {
-        this.sistOperacional = sistOperacional;
+    public Requisitos setSistema(String sistema) {
+        this.sistema = sistema;
         return this;
     }
 
@@ -76,12 +81,12 @@ public class Requisitos {
         return this;
     }
 
-    public String getPlacaVideo() {
-        return placaVideo;
+    public String getPlaca() {
+        return placa;
     }
 
-    public Requisitos setPlacaVideo(String placaVideo) {
-        this.placaVideo = placaVideo;
+    public Requisitos setPlaca(String placa) {
+        this.placa = placa;
         return this;
     }
 

@@ -1,14 +1,14 @@
-package br.com.fiap.game.jogo.model;
+package br.com.fiap.game.model;
 
-import br.com.fiap.game.jogo.dados.AtualizarJogo;
-import br.com.fiap.game.jogo.dados.InserirJogo;
+import br.com.fiap.game.dados.AtualizarGame;
+import br.com.fiap.game.dados.InserirGame;
 import jakarta.persistence.*;
 
 import java.time.Year;
 
 @Entity(name = "gamerfeeling ")
-@Table(name = "TB_GAME_FEEL")
-public class Jogo {
+@Table(name = "TB_GAMER_FEEL")
+public class Game {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,16 +17,16 @@ public class Jogo {
     private String distribuidora;
     private String idiomas;
     private int numJogadores;
-    private Year dataLancamento;
+    private int dataLancamento;
     @Enumerated(EnumType.STRING)
     private Genero genero;
     @Embedded
     private Requisitos requisitos;
     private boolean visivel;
 
-    public Jogo(){}
+    public Game(){}
 
-    public Jogo(InserirJogo dados) {
+    public Game(InserirGame dados) {
         this.titulo = dados.titulo();
         this.desenvolvedora = dados.desenvolvedora();
         this.distribuidora = dados.distribuidora();
@@ -38,11 +38,11 @@ public class Jogo {
         this.visivel = true;
     }
 
-    public void deletarJogo(){
+    public void deletarGame(){
         this.visivel = false;
     }
 
-    public void atualizarJogo(AtualizarJogo dados) {
+    public void atualizarGame(AtualizarGame dados) {
         if (dados.titulo() != null) {
             this.titulo = dados.titulo();
         }
@@ -55,17 +55,17 @@ public class Jogo {
         if (dados.idiomas() != null) {
             this.idiomas = dados.idiomas();
         }
-        if (dados.numJogadores() != null) {
+        if (dados.numJogadores() != 0) {
             this.numJogadores = dados.numJogadores();
         }
-        if (dados.dataLancamento() != null) {
+        if (dados.dataLancamento() != 0) {
             this.dataLancamento = dados.dataLancamento();
         }
         if (dados.genero() != null) {
             this.genero = dados.genero();
         }
         if (dados.requisitos() != null) {
-            this.requisitos.atualizarJogo(dados.requisitos());
+            this.requisitos.atualizarGame(dados.requisitos());
         }
 
     }
@@ -75,7 +75,7 @@ public class Jogo {
         return id;
     }
 
-    public Jogo setId(Long id) {
+    public Game setId(Long id) {
         this.id = id;
         return this;
     }
@@ -84,7 +84,7 @@ public class Jogo {
         return titulo;
     }
 
-    public Jogo setTitulo(String titulo) {
+    public Game setTitulo(String titulo) {
         this.titulo = titulo;
         return this;
     }
@@ -93,7 +93,7 @@ public class Jogo {
         return desenvolvedora;
     }
 
-    public Jogo setDesenvolvedora(String desenvolvedora) {
+    public Game setDesenvolvedora(String desenvolvedora) {
         this.desenvolvedora = desenvolvedora;
         return this;
     }
@@ -102,7 +102,7 @@ public class Jogo {
         return distribuidora;
     }
 
-    public Jogo setDistribuidora(String distribuidora) {
+    public Game setDistribuidora(String distribuidora) {
         this.distribuidora = distribuidora;
         return this;
     }
@@ -111,7 +111,7 @@ public class Jogo {
         return idiomas;
     }
 
-    public Jogo setIdiomas(String idiomas) {
+    public Game setIdiomas(String idiomas) {
         this.idiomas = idiomas;
         return this;
     }
@@ -120,16 +120,16 @@ public class Jogo {
         return numJogadores;
     }
 
-    public Jogo setNumJogadores(int numJogadores) {
+    public Game setNumJogadores(int numJogadores) {
         this.numJogadores = numJogadores;
         return this;
     }
 
-    public Year getDataLancamento() {
+    public int getDataLancamento() {
         return dataLancamento;
     }
 
-    public Jogo setDataLancamento(Year dataLancamento) {
+    public Game setDataLancamento(int dataLancamento) {
         this.dataLancamento = dataLancamento;
         return this;
     }
@@ -138,7 +138,7 @@ public class Jogo {
         return genero;
     }
 
-    public Jogo setGenero(Genero genero) {
+    public Game setGenero(Genero genero) {
         this.genero = genero;
         return this;
     }
@@ -147,7 +147,7 @@ public class Jogo {
         return requisitos;
     }
 
-    public Jogo setRequisitos(Requisitos requisitos) {
+    public Game setRequisitos(Requisitos requisitos) {
         this.requisitos = requisitos;
         return this;
     }
@@ -156,7 +156,7 @@ public class Jogo {
         return visivel;
     }
 
-    public Jogo setVisivel(boolean visivel) {
+    public Game setVisivel(boolean visivel) {
         this.visivel = visivel;
         return this;
     }

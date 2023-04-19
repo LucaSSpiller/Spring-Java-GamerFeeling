@@ -1,4 +1,4 @@
-package br.com.fiap.game.jogo.model;
+package br.com.fiap.game.model;
 
 public enum Genero {
 
@@ -7,6 +7,7 @@ public enum Genero {
     RPG,
     CORRIDA,
     ESPORTE,
-    SIMULADOR;
+    SIMULADOR
 
 }
+
