@@ -4,6 +4,7 @@ import br.com.fiap.game.dados.AtualizarGame;
 import br.com.fiap.game.dados.InserirGame;
 import br.com.fiap.game.dados.ListarGames;
 import br.com.fiap.game.model.Game;
+import br.com.fiap.game.repository.GameRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

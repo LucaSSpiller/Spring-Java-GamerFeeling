@@ -1,4 +1,4 @@
-package br.com.fiap.game.controller;
+package br.com.fiap.game.repository;
 
 import br.com.fiap.game.model.Game;
 import org.springframework.data.domain.Page;
