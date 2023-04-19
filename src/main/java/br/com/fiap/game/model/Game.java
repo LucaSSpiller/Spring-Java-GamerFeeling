@@ -4,8 +4,6 @@ import br.com.fiap.game.dados.AtualizarGame;
 import br.com.fiap.game.dados.InserirGame;
 import jakarta.persistence.*;
 
-import java.time.Year;
-
 @Entity(name = "gamerfeeling ")
 @Table(name = "TB_GAMER_FEEL")
 public class Game {

@@ -3,8 +3,6 @@ package br.com.fiap.game.dados;
 import br.com.fiap.game.model.Genero;
 import jakarta.validation.constraints.*;
 
-import java.time.Year;
-
 public record InserirGame(
         @NotBlank
         String titulo,
