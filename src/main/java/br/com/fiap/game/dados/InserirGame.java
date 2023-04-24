@@ -2,6 +2,7 @@ package br.com.fiap.game.dados;
 
 import br.com.fiap.game.model.Genero;
 import jakarta.validation.constraints.*;
+import org.hibernate.validator.constraints.Range;
 
 public record InserirGame(
         @NotBlank
@@ -11,9 +12,9 @@ public record InserirGame(
         String distribuidora,
         @NotBlank
         String idiomas,
-        @NotNull @Min(1) @Max(4)
+        @Range(min = 1, max = 4, message = "Quantidade máxima de jogadores excedida!")
         int numJogadores,
-        @NotNull @PastOrPresent
+        @NotNull
         int dataLancamento,
         @NotNull
         Genero genero,
