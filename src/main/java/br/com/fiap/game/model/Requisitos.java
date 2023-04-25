@@ -9,7 +9,6 @@ public class Requisitos {
     private String sistema;
     private String processador;
     private String memoria;
-
     private String placa;
     private int armazenamento;
 
