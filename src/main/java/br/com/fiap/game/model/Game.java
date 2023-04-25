@@ -1,5 +1,7 @@
 package br.com.fiap.game.model;
 
+//rm93618 - Luca Katsumata Spiller, RM94250 - MATHEUS GOMES CAMPOLONGO
+
 import br.com.fiap.game.dados.AtualizarGame;
 import br.com.fiap.game.dados.InserirGame;
 import jakarta.persistence.*;

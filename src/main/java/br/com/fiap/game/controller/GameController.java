@@ -1,5 +1,7 @@
 package br.com.fiap.game.controller;
 
+//rm93618 - Luca Katsumata Spiller, RM94250 - MATHEUS GOMES CAMPOLONGO
+
 import br.com.fiap.game.dados.AtualizarGame;
 import br.com.fiap.game.dados.InserirGame;
 import br.com.fiap.game.dados.ListarGames;
@@ -30,7 +32,7 @@ public class GameController {
 
     @GetMapping
     public Page<ListarGames> findAll(@PageableDefault(size = 5, sort = {"titulo"}) Pageable pagina) {
-        return repository.findAllByVisivelTrue(pagina).map(ListarGames::new);
+        return repository.findAllByDelLogicaTrue(pagina).map(ListarGames::new);
     }
 
 
