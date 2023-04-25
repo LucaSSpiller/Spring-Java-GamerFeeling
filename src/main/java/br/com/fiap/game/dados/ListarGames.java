@@ -10,7 +10,7 @@ public record ListarGames(
     String desenvolvedora,
     int numJogadores,
     Genero genero,
-    int armazenamento
+    String armazenamento
     ){
     public ListarGames(Game game){
         this (

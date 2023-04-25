@@ -14,5 +14,5 @@ public record DadosRequisitos(
      @NotBlank
      String placa,
      @NotNull @Min(1)
-     int armazenamento
+     String armazenamento
     ){ }

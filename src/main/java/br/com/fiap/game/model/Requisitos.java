@@ -9,8 +9,9 @@ public class Requisitos {
     private String sistema;
     private String processador;
     private String memoria;
+
     private String placa;
-    private int armazenamento;
+    private String armazenamento;
 
     public Requisitos() {
     }
@@ -36,7 +37,7 @@ public class Requisitos {
         if (dados.placa() != null) {
             this.placa = dados.placa();
         }
-        if (dados.armazenamento() != 0) {
+        if (dados.armazenamento() != null) {
             this.armazenamento = dados.armazenamento();
         }
 
@@ -45,7 +46,7 @@ public class Requisitos {
 
     }
 
-    public Requisitos(String sistema, String processador, String memoria, String placa, int armazenamento) {
+    public Requisitos(String sistema, String processador, String memoria, String placa, String armazenamento) {
         this.sistema = sistema;
         this.processador = processador;
         this.memoria = memoria;
@@ -89,11 +90,11 @@ public class Requisitos {
         return this;
     }
 
-    public int getArmazenamento() {
+    public String getArmazenamento() {
         return armazenamento;
     }
 
-    public Requisitos setArmazenamento(int armazenamento) {
+    public Requisitos setArmazenamento(String armazenamento) {
         this.armazenamento = armazenamento;
         return this;
     }
