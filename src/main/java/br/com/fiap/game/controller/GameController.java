@@ -23,6 +23,7 @@ public class GameController {
     @PostMapping
     @Transactional
     public void save(@RequestBody @Valid InserirGame dados){
+
         repository.save(new Game(dados));
     }
 

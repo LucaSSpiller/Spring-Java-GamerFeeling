@@ -14,7 +14,7 @@ public record InserirGame(
         String idiomas,
         @Range(min = 1, max = 4, message = "Quantidade máxima de jogadores excedida!")
         int numJogadores,
-        @NotNull
+        @NotNull @Min(4)
         int dataLancamento,
         @NotNull
         Genero genero,
